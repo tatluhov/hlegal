@@ -1,0 +1,47 @@
+.adv-section {
+  padding: 75px 0 30px;
+  background-color: $main-color;
+
+  &__container {
+    max-width: 1080px;
+  }
+
+  &__wrap {
+    @include flex;
+
+    &__titles {
+      padding-right: 60px;
+      @include flex-clmn;
+      gap: 30px;
+      border-right: 4px solid rgba(255, 255, 255, 0.3);
+
+      &__link {
+        color: $bg-color-text;
+      }
+
+      &__link:first-child {
+        background: $gradient-redtxt;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &__content {
+      padding-left: 60px;
+      @include flex-clmn;
+      max-width: 585px;
+
+      &__title {
+        padding-bottom: 30px;
+        color: #fff;
+      }
+
+      &__txt {
+        font-size: 19px;
+        line-height: 30px;
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+  }
+}
