@@ -1,0 +1,63 @@
+@use '../../modules';
+
+.blog {
+  padding: 30px 0 30px;
+  background-color: modules.$bg-color;
+
+  &__title {
+    margin-bottom: 30px;
+    background: modules.$gradient-redtxt;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+
+    &__item {
+      @include modules.flex-clmn;
+      justify-content: stretch;
+      align-self: flex-start;
+      border-radius: 8px;
+      background-color: #fff;
+      height: 100%;
+
+      &__img {
+        margin-bottom: 30px;
+      }
+
+      &__cont {
+        padding: 30px;
+
+        &__title {
+          margin-bottom: 15px;
+
+          &:hover {
+            color: modules.$accent-color;
+          }
+        }
+
+        &__date {
+          margin-bottom: 15px;
+          font-size: 12px;
+          line-height: 17px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: modules.$bg-color-text;
+        }
+
+        &__txt {
+          padding-top: 15px;
+          border-top: 4px solid modules.$bg-color-separator;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+          color: #000;
+        }
+      }
+    }
+  }
+}

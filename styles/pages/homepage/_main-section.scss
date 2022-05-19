@@ -1,12 +1,14 @@
+@use '../../modules';
+
 .main-section {
   padding-bottom: 30px;
   min-height: 800px;
-  background-color: $main-color;
+  background-color: modules.$main-color;
   position: relative;
   z-index: 1;
 
   &__title {
-    @include absolute-center;
+    @include modules.absolute-center;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -21,13 +23,29 @@
   }
 
   &__scroll {
+    $scroll: &;
     position: absolute;
     right: 50%;
     bottom: 5%;
     transform: translateX(-50%);
 
+    &:hover {
+      #{ $scroll }__circle, #{ $scroll }__circle__arrow {
+        border-color: modules.$accent-color;
+        transition: 0.1s ease-in;
+      }
+    }
+
+    &:active {
+      #{ $scroll }__circle, #{ $scroll }__circle__arrow {
+        border-color: modules.$accent-color;
+        transition: 0.1s ease-in;
+      }
+    }
+
+
     &__circle {
-      @include flex;
+      @include modules.flex;
       width: 42px;
       height: 42px;
       border-radius: 50%;

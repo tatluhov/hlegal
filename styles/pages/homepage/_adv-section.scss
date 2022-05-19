@@ -1,26 +1,39 @@
+@use '../../modules';
+
 .adv-section {
   padding: 75px 0 30px;
-  background-color: $main-color;
+  background-color: modules.$main-color;
 
   &__container {
     max-width: 1080px;
   }
 
   &__wrap {
-    @include flex;
+    @include modules.flex;
 
     &__titles {
       padding-right: 60px;
-      @include flex-clmn;
+      @include modules.flex-clmn;
       gap: 30px;
       border-right: 4px solid rgba(255, 255, 255, 0.3);
 
       &__link {
-        color: $bg-color-text;
+        color: modules.$bg-color-text;
+        transition: 0.1s ease-in;
+
+        &:hover {
+          color: modules.$accent-color;
+        }
+
+        &:active {
+          background: modules.$gradient-redtxt;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
 
       &__link:first-child {
-        background: $gradient-redtxt;
+        background: modules.$gradient-redtxt;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -28,7 +41,7 @@
 
     &__content {
       padding-left: 60px;
-      @include flex-clmn;
+      @include modules.flex-clmn;
       max-width: 585px;
 
       &__title {

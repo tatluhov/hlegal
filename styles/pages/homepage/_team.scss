@@ -1,0 +1,62 @@
+@use '../../modules';
+
+.team {
+  padding: 60px 0 50px;
+
+  &__wrap{
+    margin-bottom: 30px;
+    @include modules.flex;
+    border-radius: 12px;
+    background-color: modules.$bg-color;
+
+    &__img {
+      border-radius: 12px 0 0 12px;
+
+    }
+
+    &__content {
+      padding: 30px;
+      max-width: 1200px;
+
+      &__category {
+        margin-bottom: 5px;
+      }
+
+      &__title {
+        margin-bottom: 30px;
+        background: modules.$gradient-redtxt;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &__name {
+        margin-bottom: 6px;
+        color: modules.$bg-color-text;
+      }
+
+      &__position {
+        color: modules.$bg-color-text;
+      }
+    }
+  }
+
+  &__slider-icon {
+    margin: 0 auto;
+    @include modules.flex;
+    gap: 15px;
+
+    &__item {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: modules.$active-color;
+      opacity: 0.2;
+
+      &:hover, &:active, &.active {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
