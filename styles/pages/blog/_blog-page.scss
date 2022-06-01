@@ -1,0 +1,77 @@
+@use '../../modules';
+
+.blog-page {
+  padding: 30px 0 60px;
+  background-color: modules.$bg-color;
+
+  &__wrap {
+    margin-bottom: 30px;
+  }
+
+
+  &__tab {
+    padding: 0 5px;
+    max-width: 233px;
+    @include modules.flex;
+    gap: 5px;
+    margin: 0 auto 30px;
+    background-color: modules.$bg-color-separator;
+    border-radius: 12px;
+
+    &__news {
+      padding: 8px 30px;
+      //background-color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &__title {
+        color: modules.$main-color;
+      }
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+
+    &__articles {
+      padding: 10px 30px;
+      transition: 0.1s ease-in;
+      background-color: transparent;
+      cursor: pointer;
+
+
+      &:hover {
+        border-radius: 10px;
+        background-color: modules.$bg-color;
+      }
+    }
+  }
+
+  &__btn {
+    max-width: 211px;
+    display: flex;
+    margin: 0 auto;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    background-color: modules.$active-color;
+    box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #fff;
+
+    &:hover {
+      background-color: modules.$active-color-hover;
+      box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: modules.$active-color-active;
+      box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+      color: #fff;
+    }
+  }
+}

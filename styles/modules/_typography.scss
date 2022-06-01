@@ -6,6 +6,12 @@
   font-size: 38px;
   line-height: 46px;
   font-weight: 700;
+
+  @media screen and (max-width: 575px) {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+  }
 }
 
 .title-h2 {

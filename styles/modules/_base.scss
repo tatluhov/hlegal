@@ -19,17 +19,49 @@ a {
   //cursor: pointer;
 }
 
+textarea, input {
+  font-family: inherit;
+  outline: none;
+}
+
 .container {
   display: block;
   margin: 0 auto;
   max-width: 1640px;
   padding: 0 20px;
+
+  @media screen and (max-width: 1650px) {
+    max-width: 1360px;
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 1224px) {
+    max-width: 944px;
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 968px) {
+    max-width: 688px;
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 575px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 
-.container .container--partners {
-  display: block;
-  margin: 0 auto;
-  max-width: 1760px;
-  padding: 0 20px;
+.gradient-wrap {
+  background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+  border-radius: 0 0 12px 12px;
+}
 
+body.full-height {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .footer {
+    margin-top: auto;
+  }
 }

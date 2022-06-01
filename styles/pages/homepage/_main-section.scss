@@ -3,15 +3,35 @@
 .main-section {
   padding-bottom: 30px;
   min-height: 800px;
-  background-color: modules.$main-color;
   position: relative;
   z-index: 1;
+
+  @media screen and (max-width: 1224px) {
+    min-height: 600px;
+  }
+
+  @media screen and (max-width: 968px) {
+    min-height: 850px;
+  }
+
+  @media screen and (max-width: 575px) {
+    min-height: 615px;
+    overflow: hidden;
+  }
 
   &__title {
     @include modules.absolute-center;
     width: 100%;
     text-align: center;
     color: #fff;
+
+    @media screen and (max-width: 1224px) {
+      top: 45%;
+    }
+
+    @media screen and (max-width: 575px) {
+      max-width: 280px;
+    }
   }
 
   &__hero-symbol {
@@ -20,12 +40,21 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
+
+
+    @media screen and (max-width: 968px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 575px) {
+      width: 140%;
+    }
   }
 
   &__scroll {
     $scroll: &;
     position: absolute;
-    right: 50%;
+    left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
 
@@ -61,4 +90,7 @@
     }
   }
 }
+
+
+
 

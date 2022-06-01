@@ -1,20 +1,93 @@
 @use '../modules';
 
 .header {
-  $self: &;
+  $light: &;
   padding: 50px 0 35px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 
   &--light {
-    background-color: #fff;
-    #{ $self }__logo {
-      background-color: red;
-    }
-    #{ $self }__info {
-      background-color: red;
+    gap: 10px;
+
+    #{ $light }__logo {}
+
+    #{ $light }__burger-menu {
+      display: none;
+      svg {
+        background-color: transparent;
+        stroke: modules.$main-color;
+      }
+
+      &:active {
+        border-radius: 8px;
+        background-color: modules.$bg-color-separator;
+      }
     }
 
+    #{ $light }__info {
+
+      &__lang {
+
+        &__item {
+          color: modules.$bg-color-text;
+
+          &:hover {
+            background-color: modules.$bg-color;
+          }
+          &:active {
+            color: #ffffff;
+            background-color: modules.$accent-color;
+          }
+          &.active {
+            color: #ffffff;
+            background-color: modules.$accent-color;
+          }
+        }
+      }
+
+      &__address {
+        color: modules.$bg-color-text;
+      }
+
+      &__tel {
+        color: modules.$bg-color-text;
+      }
+
+      &__social-icon {
+        svg {
+          fill: modules.$bg-color-text;
+          transition: 0.1s ease-in;
+        }
+
+        #{ $light }:hover {
+          svg {
+            fill: modules.$accent-color;
+          }
+        }
+
+        #{ $light }:active {
+          svg {
+            fill: modules.$accent-color;
+          }
+        }
+      }
+    }
+
+    #{ $light }__navigation {
+
+      &__item {
+        color: modules.$active-color;
+
+        &:hover {
+          color: modules.$accent-color;
+        }
+
+        &:before {
+          background-color: modules.$accent-color;
+        }
+      }
+    }
   }
 
   &__logo {
@@ -22,7 +95,24 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
-    //float: left;
+
+    @media screen and (max-width: 968px) {
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    @media screen and (max-width: 575px) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+  }
+
+  &__burger-menu {
+    display: none;
   }
 
   &__info {
@@ -161,6 +251,7 @@
       }
 
       &.active {
+        color: modules.$accent-color;
         &:before {
           background-color: modules.$accent-color;
           transform-origin: left top;
@@ -183,3 +274,119 @@
 
   }
 }
+
+@media screen and (max-width: 1224px) {
+  .header {
+    grid-template-columns: repeat(1, 1fr);
+
+    &__info {
+      gap: 6px;
+
+      &__address {
+        gap: 6px;
+      }
+
+      &__tel {
+        gap: 6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .header {
+
+    &__logo {
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    &__info {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      justify-content: flex-start;
+    }
+
+    &__navigation {
+      justify-content: flex-start;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header {
+    $light: &;
+    padding: 0 0 20px;
+    gap: 0;
+
+    &--light {
+
+      #{ $light }__info {
+        background-color: modules.$bg-color;
+      }
+    }
+
+    &__logo {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      max-width: 165px;
+    }
+
+    &__burger-menu {
+      display: flex;
+      align-items: center;
+      svg {
+        background-color: transparent;
+        stroke: modules.$main-color;
+      }
+
+      &:active {
+        border-radius: 8px;
+        background-color: modules.$bg-color-separator;
+      }
+    }
+
+    &__info {
+      padding: 12px 15px;
+      margin: 0 -20px 15px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: rgba(245, 245, 250, 0.2);
+
+      &__address {
+        display: none;
+      }
+
+      &__social-icon {
+       display: none;
+      }
+    }
+
+    &__info > *:after {
+      display: none;
+    }
+
+    &__info :last-child:after {
+      display: none;
+    }
+
+    &__navigation {
+      display: none;
+        }
+      }
+    }

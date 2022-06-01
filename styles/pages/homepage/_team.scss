@@ -5,13 +5,25 @@
 
   &__wrap{
     margin-bottom: 30px;
-    @include modules.flex;
+    display: flex;
     border-radius: 12px;
     background-color: modules.$bg-color;
+    overflow: hidden;
 
     &__img {
       border-radius: 12px 0 0 12px;
+      max-height: 298px;
+      width: 400px;
+      flex-shrink: 0;
+      display: inline-flex;
 
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
 
     &__content {
@@ -27,6 +39,7 @@
         background: modules.$gradient-redtxt;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
       }
 
       &__name {
@@ -56,7 +69,70 @@
         opacity: 1;
       }
     }
+  }
+}
 
+@media screen and (max-width: 1650px) {
+
+  .team {
+
+    &__wrap{
+
+      &__img {
+        max-height: 344px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1224px) {
+
+  .team {
+
+    &__wrap{
+
+      &__img {
+        max-height: 528px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+
+  .team {
+
+    &__wrap {
+      flex-direction: column;
+
+      &__img {
+        max-height: 500px;
+        width: 100%;
+
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+
+  .team {
+    padding: 60px 0 20px;
+
+    &__wrap{
+
+      &__img {
+        height: 500px;
+        width: 100%;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
   }
 }
 

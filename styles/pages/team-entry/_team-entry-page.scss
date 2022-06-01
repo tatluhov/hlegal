@@ -1,0 +1,254 @@
+@use '../../modules';
+
+.team-entry-page {
+  padding: 25px 0 60px;
+
+  &__container {
+    max-width: 1360px;
+  }
+
+  &__wrap {
+    @include modules.flex;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  &__img {
+    height: 500px;
+    width: 400px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__cont {
+    @include modules.flex-clmn;
+
+    &__title {
+      margin-bottom: 15px;
+      background: modules.$gradient-redtxt;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &__subtitle {
+      margin-bottom: 30px;
+      @include modules.flex;
+      gap: 10px;
+
+      & > *:after {
+        content: '';
+        display: inline-block;
+        background-color: modules.$bg-color-separator;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+
+      &__state, &__link {
+        @include modules.flex;
+        gap: 10px;
+      }
+
+      &__state {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        color: modules.$bg-color-text;
+      }
+
+      &__link {
+        color: modules.$active-color;
+
+        &:last-child:after {
+          display: none;
+        }
+      }
+    }
+
+    &__txt {
+      padding-top: 30px;
+      border-top: 4px solid modules.$bg-color-separator;
+
+      &__item {
+        margin-bottom: 30px;
+      }
+
+      &__title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__cont-res {
+    display: none;
+  }
+
+  &__txt-res {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .team-entry-page {
+
+    &__container {
+      max-width: 1120px;
+    }
+
+    &__cont-res {
+      display: none;
+    }
+
+    &__txt-res {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1224px) {
+  .team-entry-page {
+
+    &__container {
+      max-width: 944px;
+    }
+
+    &__img {
+      height: 375px;
+      width: 300px;
+    }
+
+    &__cont {
+
+      &__subtitle {
+        @include modules.flex-clmn;
+
+        & > *:after {
+          content: '';
+          display: none;
+        }
+      }
+    }
+
+    &__cont-res {
+      display: none;
+    }
+
+    &__txt-res {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .team-entry-page {
+
+    &__container {
+      max-width: 688px;
+    }
+
+    &__wrap {
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    &__cont {
+      display: none;
+    }
+
+    &__cont-res {
+      @include modules.flex-clmn;
+
+      &__title {
+        margin-bottom: 15px;
+        background: modules.$gradient-redtxt;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &__subtitle {
+        @include modules.flex-clmn;
+        gap: 10px;
+
+        & > *:after {
+          content: '';
+          display: none;
+        }
+
+        &__state {
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+          color: modules.$bg-color-text;
+        }
+
+        &__link {
+          color: modules.$active-color;
+        }
+      }
+    }
+
+    &__txt-res {
+      @include modules.flex-clmn;
+      padding-top: 30px;
+      border-top: 4px solid modules.$bg-color-separator;
+
+      &__item {
+        margin-bottom: 30px;
+      }
+
+      &__title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .team-entry-page {
+    padding: 20px 0 30px;
+
+    &__container {
+      max-width: 100%;
+    }
+
+    &__wrap {
+      @include modules.flex-clmn;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__cont {
+      @include modules.flex-clmn;
+
+
+      &__subtitle {
+        @include modules.flex-clmn;
+
+        & > *:after {
+          content: '';
+          display: none;
+        }
+      }
+    }
+
+    &__cont-res {
+      display: none;
+    }
+
+    &__txt-res {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use '../../modules';
+
+.blog-entry {
+
+  padding: 60px 0 60px;
+
+  &__container {
+    max-width: 1360px;
+  }
+
+  &__hero-img {
+    margin-bottom: 30px;
+    min-height: 500px;
+    border-radius: 12px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__date {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: modules.$bg-color-text;
+    border-bottom: 4px solid modules.$bg-color-separator;
+  }
+
+  &__txt {
+    @include modules.flex-clmn;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__hero-title {
+    margin-bottom: 30px;
+    background: modules.$gradient-redtxt;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    @include modules.flex-clmn;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 26px;
+    padding-left: 15px;
+    list-style-position: inside;
+
+    li::marker {
+      font-weight: 700;
+      color: modules.$accent-color;
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+    @include modules.flex-clmn;
+    align-items: center;
+    gap: 15px;
+
+    &__asign {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 400;
+      color: modules.$bg-color-text;
+    }
+  }
+
+  &__social {
+    padding-top: 30px;
+    @include modules.flex;
+    justify-content: flex-start;
+    gap: 10px;
+    border-top: 4px solid modules.$bg-color-separator;
+
+    &__item {
+      padding: 9px;
+      border-radius: 12px;
+      background-color: modules.$bg-color;
+    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+
+  .blog-hero {
+
+    &__container {
+      max-width: 1120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1224px) {
+
+  .blog-hero {
+
+    &__container {
+      max-width: 944px;
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .blog-hero {
+
+    &__container {
+      max-width: 688px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .blog-hero {
+
+    padding: 40px 0 60px;
+
+    &__container {
+      max-width: 100%
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@use '../../modules';
+
+.services-entry {
+  padding: 25px 0 60px;
+
+  &__container {
+    max-width: 1360px;
+  }
+
+  &__wrap {
+    margin-bottom: 60px;
+    @include modules.flex-clmn;
+    align-items: center;
+    gap: 28px;
+  }
+
+  &__title {
+    background: modules.$gradient-redtxt;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__txt {
+    font-size: 19px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__btn {
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: modules.$active-color;
+    box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #fff;
+
+    &:hover {
+      background-color: modules.$active-color-hover;
+      box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: modules.$active-color-active;
+      box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+      color: #fff;
+    }
+  }
+
+  &__more {
+    padding-top: 30px;
+    border-top: 4px solid rgba(255, 255, 255, 0.5);
+
+    &__title {
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    &__list {
+      @include modules.flex;
+      align-items: flex-start;
+      gap: 60px;
+
+      &__item {
+        list-style-position: outside;
+        max-width: 50%;
+
+        li {
+          font-size: 18px;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+
+        li::marker {
+          font-weight: 700;
+          color: modules.$accent-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .services-entry {
+
+    &__container {
+      max-width: 1120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1224px) {
+  .services-entry {
+
+    &__container {
+      max-width: 944px;
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .services-entry {
+    padding: 25px 0 60px;
+
+    &__container {
+      max-width: 688px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .services-entry {
+
+    &__container {
+      max-width: 100%;
+    }
+
+
+    &__more {
+
+      &__list {
+        @include modules.flex-clmn;
+        align-items: flex-start;
+        gap: 0;
+
+        &__item {
+          list-style-position: inside;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

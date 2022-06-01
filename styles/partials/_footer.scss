@@ -2,14 +2,15 @@
 
 .footer {
   padding: 30px 0 30px;
+  background-color: modules.$bg-color;
 
   &__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 
     &__info {
-      margin-bottom: 20px;
       @include modules.flex;
       gap: 10px;
 
@@ -99,7 +100,7 @@
       }
 
       &__tel {
-        color: #000;
+        color: modules.$main-color-alt;
       }
 
       &__email {
@@ -111,6 +112,48 @@
 
         &:active {
           color: modules.$accent-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .footer {
+    background-color: modules.$bg-color;
+    padding: 0;
+
+    &__wrap {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 20px;
+      padding-top: 30px;
+      border-top: 2px solid modules.$bg-color-separator;
+
+      &__info {
+        flex-direction: column;
+        gap: 10px;
+
+        & > *:after {
+          display: none;
+        }
+
+        & :last-child:after {
+          display: none;
+        }
+
+        &__legal {
+          display: none;
+        }
+      }
+
+      &__contacts {
+
+        flex-direction: column;
+        gap: 10px;
+
+        & > *:after {
+          display: none;
         }
       }
     }

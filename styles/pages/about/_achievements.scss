@@ -1,0 +1,58 @@
+@use '../../modules';
+
+.about-achievements {
+  padding: 30px 0;
+  background-color: modules.$bg-color;
+  //border-bottom: 2px solid modules.$bg-color-separator;
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    color: modules.$main-color;
+  }
+
+  &__wrap {
+    @include modules.flex;
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    padding: 25px 10px;
+    @include modules.flex;
+    width: 25%;
+    border-radius: 12px;
+    background-color: #fff;
+  }
+
+  &__slider-icon {
+    margin: 0 auto;
+    @include modules.flex;
+    gap: 15px;
+
+    &__item {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: modules.$active-color;
+      opacity: 0.2;
+
+      &:hover, &:active, &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .about-achievements {
+
+    &__wrap {
+      @include modules.flex-clmn;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+}

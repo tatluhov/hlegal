@@ -1,0 +1,68 @@
+@use '../../modules';
+
+.about-hero-image {
+  position: relative;
+  padding: 236px 0;
+
+  &__title {
+    font-size: 96px;
+    line-height: 117px;
+    font-weight: 700;
+    letter-spacing: 63px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    opacity: 0.8;
+    text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .about-hero-image {
+    position: relative;
+    padding: 163px 0 158px;
+  }
+}
+
+@media screen and (max-width: 1224px) {
+  .about-hero-image {
+    padding: 103px 0;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .about-hero-image {
+    padding: 89px 0;
+
+    &__title {
+      font-size: 46px;
+      line-height: 56px;
+      letter-spacing: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .about-hero-image {
+    padding: 35px 0;
+
+  }
+}
+
